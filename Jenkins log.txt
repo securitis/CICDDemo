@@ -1,0 +1,173 @@
+checking out the Git
+using credential PROD_GITHUB_TOKEN
+Cloning the remote Git repository
+Cloning with configured refspecs honoured and without tags
+Cloning repository https://github.intra.fcagroup.com/FCA-ICT/smdn-di-idlwas9-enterpriseapp-42.git
+ > git init /home/devopsadmin/workspace/idlwas9-enterpriseapp-42_develop # timeout=10
+Fetching upstream changes from https://github.intra.fcagroup.com/FCA-ICT/smdn-di-idlwas9-enterpriseapp-42.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials GitHub token for Production GitHub instance - use only this for all Prod GitHub integrations
+ > git fetch --no-tags --progress https://github.intra.fcagroup.com/FCA-ICT/smdn-di-idlwas9-enterpriseapp-42.git +refs/heads/develop:refs/remotes/origin/develop # timeout=10
+Fetching without tags
+ > git config remote.origin.url https://github.intra.fcagroup.com/FCA-ICT/smdn-di-idlwas9-enterpriseapp-42.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/develop:refs/remotes/origin/develop # timeout=10
+ > git config remote.origin.url https://github.intra.fcagroup.com/FCA-ICT/smdn-di-idlwas9-enterpriseapp-42.git # timeout=10
+Fetching upstream changes from https://github.intra.fcagroup.com/FCA-ICT/smdn-di-idlwas9-enterpriseapp-42.git
+using GIT_ASKPASS to set credentials GitHub token for Production GitHub instance - use only this for all Prod GitHub integrations
+ > git fetch --no-tags --progress https://github.intra.fcagroup.com/FCA-ICT/smdn-di-idlwas9-enterpriseapp-42.git +refs/heads/develop:refs/remotes/origin/develop # timeout=10
+Checking out Revision a688d24037dfea5e1ad393866dae52a7d92d0ca5 (develop)
+Commit message: "Merge pull request #74 from FCA-ICT/feature-junkcharsremovals"
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f a688d24037dfea5e1ad393866dae52a7d92d0ca5 # timeout=10
+checkmarx scan
++ git config --get remote.origin.url
++ git config --get remote.origin.url
++ docker inspect -f . ubuntu_base_22.04:v1.0
+
+Error: No such object: ubuntu_base_22.04:v1.0
++ docker inspect -f . stellantis-harbor.artifactory.intra.fcagroup.com/ubuntu_base_22.04:v1.0
+.
++ pwsh -Command 
+									Register-PSRepository -Name "ArtifactPSGallery" -SourceLocation "https://artifactory.intra.fcagroup.com:443/artifactory/api/nuget/ArtifactPSGallery" -PublishLocation "https://artifactory.intra.fcagroup.com:443/artifactory/api/nuget/ArtifactPSGallery" -InstallationPolicy Trusted
+									Install-module LoadGenericModules -Repository ArtifactPSGallery
+									Install-module Cxutils -Repository ArtifactPSGallery
+									import-module CxUtils
+									Get-Module
+									Set-CxConfigure -CX_BASE_URL "https://eu.iam.checkmarx.net/" -CX_TENANT "Stellantis-cxone" -CX_CLIENT_ID **** -CX_CLIENT_SECRET **** -ErrorAction Stop
+									Initialize-CxScan -PROJECT_NAME smdn-di-idlwas9-enterpriseapp-42 -PROJECT_BRANCH_NAME "develop" -SOURCE_DIR "." -ErrorAction Stop 
+									
+
+[32;1mModuleType Version    PreRelease Name                                ExportedCo[0m
+[32;1m                                                                     mmands[0m
+[32;1m---------- -------    ---------- ----                                ----------[0m
+Script     1.0.2                 CxUtils                             {Initiali…
+Manifest   7.0.0.0               Microsoft.PowerShell.Management     {Add-Cont…
+Manifest   7.0.0.0               Microsoft.PowerShell.Utility        {Add-Memb…
+Script     1.4.8.1               PackageManagement                   {Find-Pac…
+Script     2.2.5                 PowerShellGet                       {Find-Com…
+Creating directory
+Setting property [ cx_base_uri ] to value [ https://eu.iam.checkmarx.net/ ]
+Setting property [ cx_tenant ] to value [ Stellantis-cxone ]
+Setting property [ cx_client_id ] to value [ **** ]
+Setting property [ cx_client_secret ] to value [ **** ]
+Current Effective Configuration
+                     BaseURI: https://eu.iam.checkmarx.net/
+              BaseAuthURIKey: 
+                  AST Tenant: Stellantis-cxone
+                   Client ID: ****
+               Client Secret: ******KarQ
+                      APIKey: 
+                       Proxy: 
+Running Security scan without thresholds
+
+Scan ID      : 9efc158f-c697-4b6c-9729-d512708ff7f5
+Project ID   : 8165c8b8-2161-47ac-ac77-9ef38d310dcd
+Project Name : smdn-di-idlwas9-enterpriseapp-42
+Status       : Running
+Created at   : 03-15-23
+Branch       : develop
+Tags         : []
+Type         : Full
+Timeout      : NONE
+Initiator    : service-account-na_cicd
+Origin       : ASTCLI 2.0.37
+Engines      : [ sast kics sca]
+
+2023/03/15 07:31:53 Wait for scan to complete 9efc158f-c697-4b6c-9729-d512708ff7f5 Running
+2023/03/15 07:31:58 Scan status:  Running
+2023/03/15 07:32:04 Scan status:  Running
+2023/03/15 07:32:09 Scan status:  Running
+2023/03/15 07:32:15 Scan status:  Running
+2023/03/15 07:32:20 Scan status:  Running
+2023/03/15 07:32:26 Scan status:  Running
+2023/03/15 07:32:33 Scan status:  Running
+2023/03/15 07:32:39 Scan status:  Running
+2023/03/15 07:32:46 Scan status:  Running
+2023/03/15 07:32:52 Scan status:  Running
+2023/03/15 07:32:59 Scan status:  Running
+2023/03/15 07:33:07 Scan status:  Running
+2023/03/15 07:33:14 Scan status:  Running
+2023/03/15 07:33:22 Scan status:  Running
+2023/03/15 07:33:29 Scan status:  Running
+2023/03/15 07:33:37 Scan status:  Running
+2023/03/15 07:33:46 Scan status:  Running
+2023/03/15 07:33:54 Scan status:  Running
+2023/03/15 07:34:03 Scan status:  Running
+2023/03/15 07:34:11 Scan status:  Running
+2023/03/15 07:34:20 Scan status:  Running
+2023/03/15 07:34:30 Scan status:  Running
+2023/03/15 07:34:39 Scan status:  Running
+2023/03/15 07:34:48 Scan status:  Running
+2023/03/15 07:34:58 Scan status:  Running
+2023/03/15 07:35:08 Scan status:  Running
+2023/03/15 07:35:19 Scan status:  Running
+2023/03/15 07:35:29 Scan status:  Running
+2023/03/15 07:35:39 Scan status:  Running
+2023/03/15 07:35:50 Scan status:  Running
+2023/03/15 07:36:01 Scan status:  Running
+2023/03/15 07:36:12 Scan status:  Running
+2023/03/15 07:36:24 Scan status:  Running
+2023/03/15 07:36:35 Scan status:  Running
+2023/03/15 07:36:47 Scan status:  Running
+2023/03/15 07:36:59 Scan status:  Running
+2023/03/15 07:37:12 Scan status:  Running
+2023/03/15 07:37:24 Scan status:  Running
+2023/03/15 07:37:37 Scan status:  Running
+2023/03/15 07:37:49 Scan status:  Running
+2023/03/15 07:38:02 Scan status:  Running
+2023/03/15 07:38:16 Scan status:  Running
+2023/03/15 07:38:29 Scan status:  Running
+2023/03/15 07:38:43 Scan status:  Running
+2023/03/15 07:38:56 Scan status:  Running
+2023/03/15 07:39:10 Scan status:  Running
+2023/03/15 07:39:24 Scan status:  Running
+2023/03/15 07:39:39 Scan status:  Running
+2023/03/15 07:39:53 Scan status:  Running
+2023/03/15 07:40:08 Scan status:  Running
+2023/03/15 07:40:23 Scan status:  Running
+2023/03/15 07:40:38 Scan status:  Running
+2023/03/15 07:40:54 Scan status:  Running
+2023/03/15 07:41:09 Scan status:  Running
+2023/03/15 07:41:24 Scan status:  Running
+2023/03/15 07:41:41 Scan status:  Running
+2023/03/15 07:41:58 Scan status:  Running
+2023/03/15 07:42:14 Scan status:  Running
+2023/03/15 07:42:30 Scan status:  Running
+2023/03/15 07:42:47 Scan status:  Running
+2023/03/15 07:43:04 Scan status:  Running
+2023/03/15 07:43:22 Scan status:  Running
+2023/03/15 07:43:39 Scan status:  Running
+2023/03/15 07:43:56 Scan status:  Running
+2023/03/15 07:44:14 Scan status:  Running
+2023/03/15 07:44:32 Scan status:  Running
+2023/03/15 07:44:51 Scan status:  Running
+2023/03/15 07:45:09 Scan status:  Running
+2023/03/15 07:45:27 Scan status:  Running
+2023/03/15 07:45:46 Scan status:  Running
+2023/03/15 07:46:05 Scan status:  Running
+2023/03/15 07:46:24 Scan status:  Running
+2023/03/15 07:46:44 Scan status:  Running
+2023/03/15 07:47:04 Scan status:  Running
+2023/03/15 07:47:23 Scan status:  Running
+2023/03/15 07:47:43 Scan status:  Running
+2023/03/15 07:48:04 Scan status:  Running
+2023/03/15 07:48:24 Scan status:  Running
+2023/03/15 07:48:45 Scan status:  Running
+2023/03/15 07:49:05 Scan status:  Running
+2023/03/15 07:49:26 Scan status:  Running
+2023/03/15 07:49:48 Scan status:  Running
+2023/03/15 07:50:09 Scan Finished with status:  Completed
+Failed listing results: Failed to parse list results: context deadline exceeded (Client.Timeout or context cancellation while reading body)
+[31;1mInitialize-CxScan: [0m
+[31;1m[36;1mLine |[0m
+[31;1m[36;1m[36;1m   8 | [0m …             [36;1mInitialize-CxScan -PROJECT_NAME smdn-di-idlwas9-enterpris[0m …[0m
+[31;1m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mException of type 'Microsoft.PowerShell.Commands.WriteErrorException' was thrown.[0m
+script returned exit code 1hudson.AbortException: script returned exit code 1
+Warning: sachin.argade@external.fcagroup.com is not a recognized user, but sending mail anyway
+Warning: sudheer.gandikota@external.stellantis.com is not a recognized user, but sending mail anyway
+Warning: aishwarya.nikam@external.fcagroup.com is not a recognized user, but sending mail anyway
+Warning: sandeepreddy.mareddy@external.stellantis.com is not a recognized user, but sending mail anyway
+Warning: fca-devops@fcagroup.com is not a recognized user, but sending mail anyway
+Sending email to: ayush.mangal@external.stellantis.com sourabh.khajanchi@external.fcagroup.com srinivas.ammina@external.stellantis.com tanmoy.ganguly@external.stellantis.com bhushan.bhabal@external.stellantis.com sachin.argade@external.fcagroup.com sudheer.gandikota@external.stellantis.com aishwarya.nikam@external.fcagroup.com sandeepreddy.mareddy@external.stellantis.com fca-devops@fcagroup.com
+script returned exit code 1
